@@ -13,11 +13,6 @@ function Login() {
       .catch((err) => console.log(err));
   }, []);
 
-/*
-  const adminUser = {
-    email: "nume@yahoo.com",
-    password: "parola",
-  };*/
 
   const [user, setUser] = useState({ email: "" });
   const [error, setError] = useState("");

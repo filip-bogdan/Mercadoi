@@ -6,11 +6,6 @@ import { render } from "react-dom";
 import { Router, Routes, Link } from "react-router-dom";
 import { Badge } from "react-bootstrap";
 
-import About from "./About";
-import BookRent from "./BookRent";
-import BookRequest from "./BookRequest";
-import Contact from "./Contact";
-
 function Sidebar() {
   const [show, setShow] = useState(false);
 
@@ -30,13 +25,6 @@ function Sidebar() {
           </h1>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <Link to="/about">About</Link>
-          <br></br>
-          <Link to="/rent-a-book">Rent a Book</Link>
-          <br></br>
-          <Link to="/request-a-book">Request a Book</Link>
-          <br></br>
-          <Link to="/contact">Contact</Link>
         </Offcanvas.Body>
       </Offcanvas>
     </>
