@@ -10,41 +10,36 @@ import Signup from "./Pages/Signup";
 
 import { Button } from "bootstrap";
 import Sidebar from "./Pages/Sidebar";
+import { AuthProvider } from "./contexts/AuthContext";
+import Profilepage from "./Pages/Profilepage";
+import UpdateProfile from "./Pages/UpdateProfile";
+import ForgotPassword from "./Pages/ForgotPassword";
+import { AddProduct } from "./Pages/AddProduct";
+import Cart from "./Pages/Cart";
 
-function App() {
+
+
+const App = () => {
   return (
-    <div className="main">
-      <Router>
-        <header>
-          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Container>
-              <Navbar.Brand href="#home">Navigation</Navbar.Brand>
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-              <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="me-auto">
-                  <Link to="/"> Home </Link>
-                  <Link to="/login"> Login </Link>
-                  <Link to="/signup"> SignUp </Link>
-                </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
-          <br></br>
-          <br></br>
-          <Sidebar />
-          <hr></hr>
-        </header>
-        
-
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </Router>
-    </div>
-  );
+    <AuthProvider>
+      <div className="main">
+        <Router>
+          <Routes>
+            <Route path="/homepage" element={<Main />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/profile" element={<Profilepage />} />
+            <Route path="/update-profile" element={<UpdateProfile />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/add-product" element={<AddProduct />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<ErrorPage />} />
+            
+          </Routes>
+        </Router>
+      </div>
+    </AuthProvider>
+  )
 }
 
 export default App;
